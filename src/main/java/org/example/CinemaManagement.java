@@ -59,10 +59,11 @@ class CinemaManagement {
             String name = getValidName();
             cinema.getSeatManagement().removeSeatsByPerson(name);
             System.out.println("All reservations for " + name + " have been canceled.");
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
+
     private int getValidRow() throws InvalidRowException {
         System.out.print("Enter row number: ");
         int row = scanner.nextInt();

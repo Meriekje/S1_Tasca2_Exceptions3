@@ -22,7 +22,7 @@ public class Cinema {
                 rows = scanner.nextInt();
                 System.out.print("Enter number of seats per row: ");
                 seatsPerRow = scanner.nextInt();
-                if (rows >0 && seatsPerRow >0) break;
+                if (rows > 0 && seatsPerRow > 0) break;
             } catch (Exception e) {
                 System.out.println("Invalid input. Please enter a number");
                 scanner.nextLine();
