@@ -12,8 +12,27 @@ class CinemaManagement {
     }
 
     public int showMenu() {
-        System.out.println("1. Show all reserved seats\n2. Show reservations by person\n3. Reserve a seat\n4. Cancel a seat reservation\n5. Cancel all reservations for a person\n0. Exit");
-        return scanner.nextInt();
+        int choice = -1; // Default invalid value
+
+        while (true) {
+            System.out.println("1. Show all reserved seats\n2. Show reservations by person\n3. Reserve a seat\n4. Cancel a seat reservation\n5. Cancel all reservations for a person\n0. Exit");
+            System.out.print("Enter your choice:");
+
+            if (scanner.hasNextInt()) {
+                choice = scanner.nextInt();
+                scanner.nextLine();
+                if (choice >= 0 && choice <= 5) {
+                    return choice;
+                } else {
+                    System.out.println("Invalid choice. Please enter a number between 0 and 5.");
+                }
+
+            } else {
+                System.out.println("Invalid input. Please enter a number.");
+                scanner.nextLine();
+            }
+
+        }
     }
 
     public void showReservedSeats() {
